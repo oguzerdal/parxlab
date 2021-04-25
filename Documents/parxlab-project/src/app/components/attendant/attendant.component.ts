@@ -36,7 +36,10 @@ export class AttendantComponent implements OnInit {
     setTimeout(() => {
       this.successMessage = false;
     }, 3000);
-
+    
+    logout(){
+    this.router.navigateByUrl('/login')
+  }
   }
 
 }

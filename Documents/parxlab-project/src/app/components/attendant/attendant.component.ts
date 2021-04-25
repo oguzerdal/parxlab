@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Attendant } from 'src/app/models/attendant.model';
+import { Router } from '@angular/router';
 
 
 const attendants: Attendant[] = [
@@ -29,7 +30,7 @@ export class AttendantComponent implements OnInit {
 
   successMessage: boolean = true;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
@@ -37,9 +38,10 @@ export class AttendantComponent implements OnInit {
       this.successMessage = false;
     }, 3000);
     
-    logout(){
-    this.router.navigateByUrl('/login')
+
   }
+  logout(){
+    this.router.navigateByUrl('/login')
   }
 
 }
